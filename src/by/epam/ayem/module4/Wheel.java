@@ -1,3 +1,5 @@
+package by.epam.ayem.module4;
+
 /*2. Создать объект класса Автомобиль, используя классы Колесо, Двигатель. Методы: ехать, заправляться,
 менять колесо, вывести на консоль марку автомобиля.*/
 
@@ -25,5 +27,10 @@ public class Wheel {
 
     public void setWheelPosition(WheelPosition wheelPosition) {
         this.wheelPosition = wheelPosition;
+    }
+
+    @Override
+    public String toString() {
+        return getWheelPosition().toString().toLowerCase() + " - " + getWheelType().toString().toLowerCase();
     }
 }
