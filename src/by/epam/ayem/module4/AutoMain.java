@@ -3,7 +3,10 @@ package by.epam.ayem.module4;
 /*2. Создать объект класса Автомобиль, используя классы Колесо, Двигатель. Методы: ехать, заправляться,
 менять колесо, вывести на консоль марку автомобиля.*/
 
-public class AppRunner {
+import by.epam.ayem.module4.model.*;
+import by.epam.ayem.module4.service.AutoService;
+
+public class AutoMain {
 
     public static void main(String[] args) {
 
@@ -14,22 +17,30 @@ public class AppRunner {
 
         Engine engine1 = new Engine(EngineType.PETROL);
 
-        AutoService bmw = new AutoService("BMW", 4, engine1, wheel1, wheel2, wheel3, wheel4);
+        Auto bmw = new Auto("BMW", 4);
+        AutoService autoService = new AutoService();
 
         System.out.println(bmw);
 
-        bmw.wheelsInfo();
-        bmw.showModel();
-        bmw.refill();
-        bmw.move();
+        autoService.putEngine(bmw, engine1);
+        autoService.putWheel(bmw, wheel1);
+        autoService.putWheel(bmw, wheel2);
+        autoService.putWheel(bmw, wheel3);
+        autoService.putWheel(bmw, wheel4);
+        autoService.putWheel(bmw, wheel4);
+
+        System.out.println(bmw);
+
+        autoService.wheelsInfo(bmw);
+        autoService.showModel(bmw);
+        autoService.refill(bmw);
+        autoService.move(bmw);
 
         Wheel wheel5 = new Wheel(WheelType.SUMMER, WheelPosition.FRONT_LEFT);
         Wheel wheel6 = new Wheel(WheelType.SUMMER, WheelPosition.FRONT_RIGHT);
-        bmw.changeWheel(WheelPosition.FRONT_LEFT, wheel5);
-        bmw.changeWheel(WheelPosition.FRONT_RIGHT, wheel6);
+        autoService.changeWheel(bmw, WheelPosition.FRONT_LEFT, wheel5);
+        autoService.changeWheel(bmw, WheelPosition.FRONT_RIGHT, wheel6);
 
         System.out.println(bmw);
-
     }
-
 }

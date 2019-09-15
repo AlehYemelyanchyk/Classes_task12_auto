@@ -1,4 +1,4 @@
-package by.epam.ayem.module4;
+package by.epam.ayem.module4.model;
 
 /*2. Создать объект класса Автомобиль, используя классы Колесо, Двигатель. Методы: ехать, заправляться,
 менять колесо, вывести на консоль марку автомобиля.*/
@@ -17,5 +17,10 @@ public class Engine {
 
     public void setEngineType(EngineType engineType) {
         this.engineType = engineType;
+    }
+
+    @Override
+    public String toString() {
+        return engineType.toString();
     }
 }
