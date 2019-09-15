@@ -3,8 +3,6 @@ package by.epam.ayem.module4.model;
 /*2. Создать объект класса Автомобиль, используя классы Колесо, Двигатель. Методы: ехать, заправляться,
 менять колесо, вывести на консоль марку автомобиля.*/
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Auto {
