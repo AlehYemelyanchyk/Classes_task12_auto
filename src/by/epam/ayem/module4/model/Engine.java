@@ -18,9 +18,4 @@ public class Engine {
     public void setEngineType(EngineType engineType) {
         this.engineType = engineType;
     }
-
-    @Override
-    public String toString() {
-        return engineType.toString();
-    }
 }

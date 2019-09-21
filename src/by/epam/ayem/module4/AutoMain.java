@@ -17,7 +17,7 @@ public class AutoMain {
 
         Engine engine1 = new Engine(EngineType.PETROL);
 
-        Auto bmw = new Auto("BMW", 4);
+        Auto bmw = new Auto("BMW", EngineType.DIESEL, 4);
         AutoService autoService = new AutoService();
 
         System.out.println(bmw);
@@ -27,7 +27,7 @@ public class AutoMain {
         autoService.putWheel(bmw, wheel2);
         autoService.putWheel(bmw, wheel3);
         autoService.putWheel(bmw, wheel4);
-        autoService.putWheel(bmw, wheel4);
+        autoService.changeWheel(bmw, WheelPosition.FRONT_LEFT, wheel1);
 
         System.out.println(bmw);
 

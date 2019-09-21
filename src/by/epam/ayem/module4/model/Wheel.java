@@ -31,6 +31,6 @@ public class Wheel {
 
     @Override
     public String toString() {
-        return getWheelPosition().toString().toLowerCase() + " - " + getWheelType().toString().toLowerCase();
+        return getWheelPosition().toString() + " - " + getWheelType().toString();
     }
 }

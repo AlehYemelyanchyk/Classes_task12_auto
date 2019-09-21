@@ -8,23 +8,19 @@ import by.epam.ayem.module4.model.Engine;
 import by.epam.ayem.module4.model.Wheel;
 import by.epam.ayem.module4.model.WheelPosition;
 
-import java.util.ArrayList;
-
 public class AutoService {
 
     public void putEngine(Auto auto, Engine engine) {
         if (auto.getEngine() == null) {
             auto.setEngine(engine);
         } else if (auto.getEngine() != null) {
-            System.out.println("Auto already has an engine");
+            auto.setEngine(engine);
+            System.out.println("The current engine was replaced with " + engine.getEngineType());
         }
     }
 
     public void putWheel(Auto auto, Wheel wheel) {
-        if (auto.getWheels() == null) {
-            auto.setWheels(new ArrayList<>());
-            auto.getWheels().add(wheel);
-        } else if (auto.getWheels().size() < auto.getWheelsAmount()) {
+        if (auto.getWheels().size() < auto.getWheelsAmount()) {
             auto.getWheels().add(wheel);
         } else {
             System.out.println("Auto has all " + auto.getWheelsAmount() + " wheels");
@@ -32,13 +28,15 @@ public class AutoService {
     }
 
     public void changeWheel(Auto auto, WheelPosition position, Wheel wheel) {
-        if (auto.getWheels() != null) {
+        if (!auto.getWheels().isEmpty()) {
             for (int i = 0; i < auto.getWheels().size(); i++) {
                 if (auto.getWheels().get(i).getWheelPosition().equals(position)) {
                     auto.getWheels().set(i, wheel);
                     break;
                 }
             }
+        } else {
+            auto.getWheels().add(wheel);
         }
     }
 
